@@ -1,7 +1,31 @@
-VidNova is a focused backend for a video-sharing platform, implemented in Node.js and organized with clarity for maintainability and extension. The codebase follows standard Express patterns and separates concerns across controllers, models, routes, middlewares, utilities, and a lightweight persistence layer in db/. Core controllers such as video.controller.js, user.controller.js, playlist.controller.js, and comment.controller.js handle RESTful operations, while dashboard, like, subscription, and tweet controllers add cross-cutting social features. Each controller is paired with route modules under routes/ to keep HTTP routing declarative and testable.
+🎞️ Cinéon 
+:The name Cinéon comes from the ancient root “kinein” — to move.
+Cinema began with motion; Cinéon keeps that idea alive in code.
+It’s built on movement, clarity, and modularity — the same qualities that make great storytelling timeless.
 
-Models encapsulate data logic for videos, users, playlists, likes, subscriptions, tweets, and comments in models/, which keeps data access decoupled from controllers. The db/index.js file centralizes database connectivity, making it straightforward to replace or mock the persistence layer for testing. Middlewares include authentication and file-upload handling (auth.middleware.js, multer.middleware.js), letting protected endpoints and media uploads integrate cleanly. Utility modules like ApiResponse.js, ApiError.js, and asyncHandler.js standardize responses, error handling, and async control flow across the app.
+A modular Node.js backend built for storytelling at scale.
 
-Media handling integrates with Cloudinary through utils/cloudinary.js, simplifying image/video storage and CDN delivery. The project ships minimal top-level entry points (index.js, app.js) and configuration in constants.js, so it’s easy to wire into Docker, CI, or a cloud deployment. Public static assets live under public, with a temp/ folder for transient files.
+Overview
 
-Designed for iterative development, Videotube is ready for feature growth: add real-time notifications, migrate models to TypeScript, plug in a relational or NoSQL DB, or introduce background workers for transcoding. The repository’s modular layout, clear controller-route pairing, and helper utilities make testing, scaling, and onboarding straightforward—ideal for developers building a modern media backend.
+Cinéon is a structured, expressive backend for a modern video-sharing platform. Built on Node.js and Express, it follows a clean architectural rhythm — controllers for logic, models for data, and declarative routes for clarity. Every piece fits together so developers can expand features without breaking flow.
+
+Cinéon handles video, user, playlist, like, subscription, tweet, and comment modules, each with consistent error handling and response standards. Media management runs through Cloudinary, while authentication, uploads, and async control are handled with lightweight middlewares.
+
+🎬 Core Features
+	•	RESTful API design across all major entities
+	•	Modular structure with controllers, routes, and models clearly separated
+	•	Authentication middleware with JWT
+	•	File uploads via Multer and Cloudinary integration
+	•	Unified error handling through ApiError.js and asyncHandler.js
+	•	Standardized success responses with ApiResponse.js
+	•	Central database connection in db/index.js for easy persistence swaps
+	•	Static files under /public and temporary uploads in /temp
+	•	Scalable layout ready for Docker, CI, or cloud deployment
+  
+  ⚙️ Tech Stack
+	•	Node.js + Express.js
+	•	MongoDB / Mongoose
+	•	Cloudinary SDK for media storage and delivery
+	•	JWT Authentication
+	•	Multer for file uploads
+	•	Docker-ready environment setup
